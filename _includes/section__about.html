@@ -1,0 +1,25 @@
+<section class="about">
+    {% if include.divider == true %}
+    <div class="wrap">
+        <hr/>
+    </div>
+    {% endif %}
+    <div class="wrap grid">
+
+        <div class="about__image">
+            <img src="{{ '/images/profile.jpg' | relative_url }}" alt=""> {% include component-socials.html %}
+        </div>
+
+        <div class="about__content">
+            <h4 class="title">You've found a freelancer</h4>
+            <p class="subtitle subtitle--light">I design and develop website.
+            </p>
+
+
+            <p>I’d love to learn about your company and see how I can help, feel free to send me an email!</p>
+
+
+        </div>
+    </div>
+
+</section>

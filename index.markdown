@@ -1,0 +1,50 @@
+---
+layout: default
+overtitle: 
+title: 
+description:  
+featured_image: /images/social.jpg
+---
+
+<div class="page-home">
+
+	{% if site.data.settings.hero_settings.background_image %}
+	<img src="{{ site.data.settings.hero_settings.background_image | relative_url }}" class="hero__background" draggable="false">
+	{% endif %}
+
+	<section class="hero">
+		<div class="wrap grid">
+			<div class="title">
+				<p class="subtitle">{{ page.overtitle }}</p>
+				<h1>{{ page.title }}</h1>
+			</div>
+
+			<p class="intro subtitle--light">
+				{{ page.description }}
+				<a href="#" class="hero__cta button--fill contact-trigger js-contact">Get In Touch</a>
+			</p>
+		</div>
+	</section>
+
+
+
+	{% include section__about.html %}
+
+	<section class="recent-posts">
+		<div class="wrap grid">
+			<header class="recent-posts__header">
+				<h4>Recent blog posts</h4>
+				<a href="{{ '/blog' | relative_url }}" class="action button--text--accent --right">All Posts</a>
+			</header>
+
+			<div class="recent-posts__list grid">
+				{% for post in site.posts limit: 3 %}
+				{% include component__post-preview.html %}
+				{% endfor %}
+			</div>
+
+			<a href="{{ '/blog' | relative_url }}" class="action-bottom button--text--accent --right">All Posts</a>
+		</div>
+	</section>
+</div>
+
